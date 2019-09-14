@@ -54,7 +54,7 @@ set autowrite		" Automatically save before commands like :next and :make
 set expandtab
 set showcmd
 set cursorline
-set ruler
+set ruler           " line number, the column number, the virtual column number
 set magic
 set mat=2
 set noerrorbells
