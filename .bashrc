@@ -135,13 +135,7 @@ alias edit='vim'
 alias bashrc='vim ~/.bashrc'
 alias vimrc='vim ~/repos/dotfiles/vimrc'
 
-#Git Aliases
-alias gac='git add . && git commit'
-alias gs='git status'
-alias gp='git push --all'
-alias gcall='git checkout .'
-alias gg='git log --oneline --graph --all --decorate'
-
+#system Aliases
 alias root='sudo -i'
 alias su='sudo -i'
 alias reboot='sudo reboot'
@@ -154,18 +148,32 @@ alias speed='speedtest-cli --server 2406 --simple'
 alias updis='sudo do-release-upgrade'
 
 #FilePath Aliases
+alias nf='neofetch'
 alias repos='cd /home/kxn/repos/'
-alias nfetch='neofetch'
 alias resume='cd /home/kxn/repos/resume/ && va && code .'
 alias reposEx='cd /home/kxn/repos/ && open .'
 alias downloads='cd /home/kxn/Downloads/'
 alias documents='cd /home/kxn/Documents/ && start .'
 alias documentsEx='cd /home/kxn/Documents/'
 alias downloadsEx='cd /home/kxn/Downloads/ && explorer.exe .'
-alias drive='chromium-browser https://drive.google.com/drive/my-drive'
-alias gith='chromium-browser https://github.com/kxnaylorCLE216'
-alias ghub='gitkraken'
+alias drive='chromium-browser https://drive.google.com/drive/my-drive &'
+alias gith='chromium-browser https://github.com/kxnaylorCLE216 &'
+alias ghub='gitkraken &'
 alias google='chromium-browser&'
+
+#Git Aliases
+alias gac='git add . && git commit'
+alias gs='git status'
+alias gp='git push --all'
+alias gcall='git checkout .'
+alias gg='git log --oneline --graph --all --decorate'
+
+gc() {
+    echo "committing: $@"
+    for term in $@; do
+        app="$app $term"
+	sudo apt-get install "$app"
+}
 
 goo() {
     search=""
@@ -174,11 +182,6 @@ goo() {
         search="$search%20$term"
         done
         xdg-open "http://www.google.com/search?q=$search" &
-}
-
-install() {
-    echo "installing: $@"
-	sudo apt-get install "$@"
 }
 
 uddot() {
