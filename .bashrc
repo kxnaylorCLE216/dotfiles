@@ -132,6 +132,7 @@ alias vi=vim
 alias svi='sudo vi'
 alias edit='vim'
 alias bashrc='vim ~/.bashrc'
+alias vimrc='vim ~/repos/dotfiles/vimrc'
 
 #Git Aliases
 alias gac='git add . && git commit'
@@ -170,7 +171,7 @@ goo() {
     for term in $@; do
         search="$search%20$term"
         done
-        xdg-open "http://www.google.com/search?q=$search"
+        xdg-open "http://www.google.com/search?q=$search" &
 }
 
 install() {
