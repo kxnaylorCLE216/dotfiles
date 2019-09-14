@@ -172,6 +172,7 @@ gc() {
     echo "committing: $@"
     for term in $@; do
         app="$app $term"
+        done
 	sudo apt-get install "$app"
 }
 
