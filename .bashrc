@@ -87,6 +87,8 @@ fi
 # colored GCC warnings and errors
 #export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 
+set -o vi
+
 # some more ls aliases
 alias ll='ls -alF'
 alias la='ls -A'
@@ -150,6 +152,7 @@ alias updis='sudo do-release-upgrade'
 
 #FilePath Aliases
 alias repos='cd /home/kxn/repos/'
+alias nf='neofetch'
 alias resume='cd /home/kxn/repos/resume/ && va && code .'
 alias reposEx='cd /home/kxn/repos/ && open .'
 alias downloads='cd /home/kxn/Downloads/'
@@ -170,6 +173,20 @@ goo() {
         xdg-open "http://www.google.com/search?q=$search"
 }
 
+install() {
+    echo "installing: $@"
+	sudo apt-get install "$@"
+}
+
+uddot() {
+    echo "pushing the dot files"
+	cd ~/repos/dotfiles/		
+	git status
+	git add .
+	git commit -m "$@"
+	git push origin master
+	
+}
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
