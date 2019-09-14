@@ -180,10 +180,13 @@ install() {
 
 uddot() {
     echo "pushing the dot files"
+    for term in $@; do
+        message="$message $term"
+	done
 	cd ~/repos/dotfiles/		
 	git status
 	git add .
-	git commit -m "$@"
+	git commit -m "$message"
 	git push origin master
 	
 }
