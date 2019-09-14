@@ -145,6 +145,7 @@ alias root='sudo -i'
 alias su='sudo -i'
 alias reboot='sudo reboot'
 alias poweroff='sudo poweroff'
+alias suspend='systemctl suspend'
 alias shutdown='sudo shutdown'
 alias myip="curl http://ipecho.net/plain; echo"
 alias www='python -m SimpleHTTPServer 8000'
