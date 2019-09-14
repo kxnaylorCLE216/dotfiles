@@ -152,7 +152,7 @@ alias updis='sudo do-release-upgrade'
 
 #FilePath Aliases
 alias repos='cd /home/kxn/repos/'
-alias nf='neofetch'
+alias nfetch='neofetch'
 alias resume='cd /home/kxn/repos/resume/ && va && code .'
 alias reposEx='cd /home/kxn/repos/ && open .'
 alias downloads='cd /home/kxn/Downloads/'
