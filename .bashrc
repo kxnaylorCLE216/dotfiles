@@ -3,14 +3,11 @@
 # for examples
 
 # If not running interactively, don't do anything
-case $- in
-    *i*) ;;
-      *) return;;
-esac
+[ -z "$PS1" ] && return
 
-# don't put duplicate lines or lines starting with space in the history.
-# See bash(1) for more options
-HISTCONTROL=ignoreboth
+# don't put duplicate lines in the history. See bash(1) for more options
+# ... or force ignoredups and ignorespace
+HISTCONTROL=ignoredups:ignorespace
 
 # append to the history file, don't overwrite it
 shopt -s histappend
@@ -23,21 +20,17 @@ HISTFILESIZE=2000
 # update the values of LINES and COLUMNS.
 shopt -s checkwinsize
 
-# If set, the pattern "**" used in a pathname expansion context will
-# match all files and zero or more directories and subdirectories.
-#shopt -s globstar
-
 # make less more friendly for non-text input files, see lesspipe(1)
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
 
 # set variable identifying the chroot you work in (used in the prompt below)
-if [ -z "${debian_chroot:-}" ] && [ -r /etc/debian_chroot ]; then
+if [ -z "$debian_chroot" ] && [ -r /etc/debian_chroot ]; then
     debian_chroot=$(cat /etc/debian_chroot)
 fi
 
 # set a fancy prompt (non-color, unless we know we "want" color)
 case "$TERM" in
-    xterm-color|*-256color) color_prompt=yes;;
+    xterm-color) color_prompt=yes;;
 esac
 
 # uncomment for a colored prompt, if the terminal has the capability; turned
@@ -84,16 +77,8 @@ if [ -x /usr/bin/dircolors ]; then
     alias egrep='egrep --color=auto'
 fi
 
-# colored GCC warnings and errors
-#export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
-
 set -o vi
 
-# some more ls aliases
-alias ll='ls -alF'
-alias la='ls -A'
-alias l='ls -CF'
-alias ks='ls -CF'
 # some more ls aliases
 alias ll='ls -alF'
 alias la='ls -A'
@@ -148,18 +133,20 @@ alias speed='speedtest-cli --server 2406 --simple'
 alias updis='sudo do-release-upgrade'
 
 #FilePath Aliases
-alias nf='neofetch'
-alias repos='cd /home/kxn/repos/'
-alias resume='cd /home/kxn/repos/resume/ && va && code .'
-alias reposEx='cd /home/kxn/repos/ && open .'
-alias downloads='cd /home/kxn/Downloads/'
-alias documents='cd /home/kxn/Documents/ && start .'
-alias documentsEx='cd /home/kxn/Documents/'
-alias downloadsEx='cd /home/kxn/Downloads/ && explorer.exe .'
-alias drive='chromium-browser https://drive.google.com/drive/my-drive &'
-alias gith='chromium-browser https://github.com/kxnaylorCLE216 &'
-alias ghub='gitkraken &'
-alias google='chromium-browser&'
+alias repos='cd /mnt/c/Users/naylo/source/repos/'
+alias reposEx='cd /mnt/c/Users/naylo/source/repos/ && explorer.exe .'
+alias downloads='cd /mnt/c/Users/naylo/Downloads/'
+alias documents='cd /mnt/c/Users/naylo/Documents/ && start .'
+alias documentsEx='cd /mnt/c/Users/naylo/Documents/'
+alias downloadsEx='cd /mnt/c/Users/naylo/Downloads/ && explorer.exe .'
+alias anawc='cd /mnt/c/Users/naylo/source/repos/tr-ANAWC'
+alias anaclaims='cd /mnt/c/Users/naylo/source/repos/tr-ANAClaims'
+alias ezpac='cd /mnt/c/Users/naylo/source/repos/tr-EzPackage'
+alias start='cmd.exe /C start'
+alias ghub='start Github'
+alias gith='cmd.exe /C start https://github.com/kxnaylorCLE216'
+alias google='start chrome'
+alias postman='cd /mnt/c/Users/naylo/AppData/Local/Postman/&& start Postman.exe && cd'
 
 #Git Aliases
 alias gac='git add . && git commit'
@@ -170,10 +157,10 @@ alias gg='git log --oneline --graph --all --decorate'
 
 gc() {
     echo "committing: $@"
-    for term in $@; do
-        app="$app $term"
+    for word in $@; do
+        commit="$commit $word"
         done
-	sudo apt-get install "$app"
+	git commit -m "$commit"
 }
 
 goo() {
@@ -206,10 +193,6 @@ dstat() {
 	cd $curr
 }
 
-# Add an "alert" alias for long running commands.  Use like so:
-#   sleep 10; alert
-alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
-
 # Alias definitions.
 # You may want to put all your additions into a separate file like
 # ~/.bash_aliases, instead of adding them here directly.
@@ -222,10 +205,6 @@ fi
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
 # sources /etc/bash.bashrc).
-if ! shopt -oq posix; then
-  if [ -f /usr/share/bash-completion/bash_completion ]; then
-    . /usr/share/bash-completion/bash_completion
-  elif [ -f /etc/bash_completion ]; then
-    . /etc/bash_completion
-  fi
-fi
+#if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
+#    . /etc/bash_completion
+#fi
