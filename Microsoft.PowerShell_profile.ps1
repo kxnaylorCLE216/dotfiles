@@ -1,7 +1,3 @@
-Clear-Host
-(get-host).UI.RawUI.Backgroundcolor="Black"
-Clear-Host
-
 function repos-explorer {ii c:\Users\naylo\source\repos}
 function repos-change-dir {cd c:\Users\naylo\source\repos}
 function pprofile {code C:\Users\naylo\Documents\WindowsPowerShell\Microsoft.PowerShell_profile.ps1}
@@ -11,6 +7,8 @@ function clear-black {
     (get-host).UI.RawUI.Backgroundcolor="Black"
     Clear-Host
 }
+
+clear-black
 
 $git = "C:\Program Files\Git\cmd\git.exe"
 
