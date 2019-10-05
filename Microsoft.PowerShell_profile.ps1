@@ -31,7 +31,7 @@ function git-log {
 }
 
 function git-add-all {
-    & $git 'add' '--all' $args
+    & $git 'add' '--all' $args 
 }
 
 function git-commit {
@@ -41,6 +41,10 @@ function git-commit {
 function git-commit-add-all {
     & $git 'commit' '-a'
     & $git 'add' '--all'
+}
+
+function git-push {
+    & $git 'push' '-a'
 }
 
 Write-Host 'Welcome to' "$env:computername" -ForegroundColor Green
@@ -67,3 +71,4 @@ new-item alias:glo -value git-log
 new-item alias:ga -value git-add-all
 new-item alias:gac -value git-commit-add-all
 new-item alias:gcom -value git-commit
+new-item alias:gpsh -value git-push
