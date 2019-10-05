@@ -68,6 +68,7 @@ function update-profile {
     git-push
     Set-Location C:\Users\naylo\
     clear-black
+    C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
 }
 
 Write-Host 'Welcome to' "$env:computername" -ForegroundColor Green
