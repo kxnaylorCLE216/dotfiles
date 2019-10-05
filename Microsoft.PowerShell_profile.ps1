@@ -6,6 +6,12 @@ function repos-explorer {ii c:\Users\naylo\source\repos}
 function repos-change-dir {cd c:\Users\naylo\source\repos}
 function pprofile {code C:\Users\naylo\Documents\WindowsPowerShell\Microsoft.PowerShell_profile.ps1}
 
+function clear-black {
+    Clear-Host
+    (get-host).UI.RawUI.Backgroundcolor="Black"
+    Clear-Host
+}
+
 $git = "C:\Program Files\Git\cmd\git.exe"
 
 function git-status {
@@ -29,7 +35,7 @@ function git-add-all {
 }
 
 function git-commit {
-    & $git 'commit' '-a' '-m' $args
+    & $git 'commit' '-m' $args
 }
 
 function git-commit-add-all {
@@ -50,7 +56,7 @@ $dir = 'C:\Program Files (x86)\'
 
 new-item alias:gvi -value $dir\vim\vim80\gvim.exe
 new-item alias:o -value ii
-new-item alias:c -value clear
+new-item alias:c -value clear-black
 new-item alias:reposEx -value repos-explorer
 new-item alias:repos -value repos-change-dir
 
