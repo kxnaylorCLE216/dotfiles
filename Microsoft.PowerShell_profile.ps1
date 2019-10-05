@@ -53,6 +53,7 @@ function update-profile {
     git-commit-add-all
     git-push
     Set-Location C:\Users\naylo\
+    clear-black
 }
 
 Write-Host 'Welcome to' "$env:computername" -ForegroundColor Green
