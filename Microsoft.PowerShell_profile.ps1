@@ -10,6 +10,22 @@ function clear-black {
 
 clear-black
 
+$colors = @{
+  # ConsoleColor enum has all the old colors
+  "Error" = [ConsoleColor]::DarkRed
+
+  # A mustardy 24 bit color escape sequence
+  "String" = "$([char]0x1b)[38;5;100m"
+
+  # A light slate blue RGB value
+  "Command" = "#0ff707"
+
+}
+
+Set-PSReadLineOption -Colors $colors
+
+[console]::BackgroundColor = "black"
+
 $git = "C:\Program Files\Git\cmd\git.exe"
 
 function git-status {
@@ -81,3 +97,17 @@ new-item alias:gcom -value git-commit
 new-item alias:gpsh -value git-push
 
 new-item alias:uppro -value update-profile
+
+$Host.UI.RawUI.BackgroundColor = ($bckgrnd = 'Black')
+
+$Host.PrivateData.ErrorForegroundColor = 'Red'
+$Host.PrivateData.ErrorBackgroundColor = $bckgrnd
+$Host.PrivateData.WarningForegroundColor = 'Magenta'
+$Host.PrivateData.WarningBackgroundColor = $bckgrnd
+$Host.PrivateData.DebugForegroundColor = 'Yellow'
+$Host.PrivateData.DebugBackgroundColor = $bckgrnd
+$Host.PrivateData.VerboseForegroundColor = 'Green'
+$Host.PrivateData.VerboseBackgroundColor = $bckgrnd
+$Host.PrivateData.ProgressForegroundColor = 'Cyan'
+$Host.PrivateData.ProgressBackgroundColor = $bckgrnd
+
