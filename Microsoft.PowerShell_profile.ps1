@@ -44,7 +44,15 @@ function git-commit-add-all {
 }
 
 function git-push {
-    & $git 'push' '-a'
+    & $git 'push' '--all'
+}
+
+function update-profile {
+    cp C:\Users\naylo\Documents\WindowsPowerShell\Microsoft.PowerShell_profile.ps1 C:\Users\naylo\source\repos\dotfiles\
+    Set-Location C:\Users\naylo\source\repos\dotfiles\
+    git-commit-add-all
+    git-push
+    Set-Location C:\Users\naylo\
 }
 
 Write-Host 'Welcome to' "$env:computername" -ForegroundColor Green
@@ -72,3 +80,5 @@ new-item alias:ga -value git-add-all
 new-item alias:gac -value git-commit-add-all
 new-item alias:gcom -value git-commit
 new-item alias:gpsh -value git-push
+
+new-item alias:uppro -value update-profile
