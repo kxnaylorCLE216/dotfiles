@@ -80,6 +80,7 @@ fi
 set -o vi
 
 # some more ls aliases
+alias C='cd C:'
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
@@ -139,7 +140,6 @@ alias downloads='cd /mnt/c/Users/naylo/Downloads/'
 alias documents='cd /mnt/c/Users/naylo/Documents/ && start .'
 alias documentsEx='cd /mnt/c/Users/naylo/Documents/'
 alias downloadsEx='cd /mnt/c/Users/naylo/Downloads/ && explorer.exe .'
-alias anawc='cd /mnt/c/Users/naylo/source/repos/tr-ANAWC'
 alias start='cmd.exe /C start'
 alias ghub='start Github'
 alias gith='cmd.exe /C start https://github.com/kxnaylorCLE216'
@@ -182,7 +182,7 @@ uddot() {
 	git add .
 	git commit -m "$message"
 	git push origin master
-	
+	C
 }
 
 dstat() {
