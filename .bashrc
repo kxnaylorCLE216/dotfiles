@@ -167,10 +167,12 @@ goo() {
     for term in $@; do
         search="$search%20$term"
         done
-        xdg-open "http://www.google.com/search?q=$search" &
+        start "http://www.google.com/search?q=$search" &
 }
 
 uddot() {
+    repos
+    cd dotfiles
     echo "pushing the dot files"
     for term in $@; do
         message="$message $term"
