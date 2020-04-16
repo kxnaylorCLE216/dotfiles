@@ -108,12 +108,13 @@ alias e='exit'
 alias c='clear'
 alias count='find . -type f | wc -l'
 alias tcn='mv --force -t ~/.local/share/Trash '
-alias ud='sudo apt-get update && sudo apt-get upgrade'
+alias ud='sudo pacman -Syy && sudo pacman -Su'
 alias autorm='sudo apt autoremove'
 alias path='echo -e ${PATH//:/\\n}'
 alias now='date +"%T"'
 alias nowtime=now
 alias nowdate='date +"%m-%d-%Y"'
+
 
 #python Aliases
 alias ve='python3 -m venv ./venv'
@@ -132,7 +133,7 @@ alias djs='python manage.py shell'
 alias vi=vim
 alias svi='sudo vi'
 alias edit='vim'
-alias bashrc='vim ~/.bashrc'
+alias brc='vim ~/.bashrc'
 alias vimrc='vim ~/repos/dotfiles/vimrc'
 
 #system Aliases
@@ -146,6 +147,7 @@ alias myip="curl http://ipecho.net/plain; echo"
 alias www='python -m SimpleHTTPServer 8000'
 alias speed='speedtest-cli --server 2406 --simple'
 alias updis='sudo do-release-upgrade'
+alias t='xfce4-terminal'
 
 #FilePath Aliases
 alias nf='neofetch'
@@ -159,7 +161,7 @@ alias downloadsEx='cd /home/kxn/Downloads/ && explorer.exe .'
 alias drive='chromium-browser https://drive.google.com/drive/my-drive &'
 alias gith='chromium-browser https://github.com/kxnaylorCLE216 &'
 alias ghub='gitkraken &'
-alias google='chromium-browser&'
+alias gc='chromium&'
 
 #Git Aliases
 alias gac='git add . && git commit'
@@ -168,13 +170,13 @@ alias gp='git push --all'
 alias gcall='git checkout .'
 alias gg='git log --oneline --graph --all --decorate'
 
-gc() {
-    echo "committing: $@"
-    for term in $@; do
-        app="$app $term"
-        done
-	sudo apt-get install "$app"
-}
+#gc() {
+#    echo "committing: $@"
+#    for term in $@; do
+#        app="$app $term"
+#        done
+#	sudo apt-get install "$app"
+#}
 
 goo() {
     search=""
