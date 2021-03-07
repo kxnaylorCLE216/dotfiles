@@ -1,0 +1,17 @@
+{
+    "editor.tabSize": 2,
+    "editor.suggestSelection": "first",
+    "workbench.tree.indent": 25,
+    "breadcrumbs.enabled": true,
+    "html.format.wrapAttributes": "force-aligned",
+    "explorer.openEditors.visible": 0,
+    "editor.fontSize": 16,
+    "editor.formatOnSave": true,
+    "files.autoSave": "onFocusChange",
+    "editor.snippetSuggestions": "top",
+    "workbench.editor.labelFormat": "medium",
+    "git.enableSmartCommit": true,
+    "git.autofetch": true,
+    "workbench.sideBar.location": "right",
+    "workbench.iconTheme": "material-icon-theme"
+}
