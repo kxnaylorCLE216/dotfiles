@@ -223,6 +223,14 @@ bindsym $mod+Shift+f exec firefox
 
 bindsym $mod+o exec nautilus
 
+bindsym $mod+p exec youtube-music
+
+bindsym $mod+b exec thunderbird
+
+bindsym $mod+t exec fish -c twitch
+
+bindsym $mod+y exec fish -c yt
+
 bindsym $mod+Shift+n exec xinput set-prop 13 "Device Enabled" 0
 bindsym $mod+Shift+m exec xinput set-prop 13 "Device Enabled" 1
 
@@ -237,40 +245,39 @@ bindsym $mod+Shift+s sticky toggle
 
 assign [class="Code"] $code
 for_window [class="Code"] border 1pixel
-exec code
+#exec code
 
 assign [class="YouTube Music"] $ytmusic
 for_window [class="YouTube Music"] border 1pixel
-exec youtube-music
+#exec youtube-music
 
 assign [class="Alacritty"] $terms
 for_window [class="Alacritty"] border 1pixel
-exec alacritty
+#exec alacritty
 
 assign [class="Gedit"] $gedit
 for_window [class="Gedit"] border 1pixel
-exec gedit
+#exec gedit
 
 assign [class="googlemessages-nativefier-11f104"] $signal
 for_window [class="googlemessages-nativefier-11f104"] border 1pixel
-exec google-messages
+#exec google-messages
 
 assign [class="Twitch"] $twitch
 for_window [class="Twitch"] border 1pixel
-exec fish -c twitch
-
+#exec fish -c twitch
 
 assign [class="Thunderbird"] $email
 for_window [class="Thunderbird"] border 1pixel
-exec thunderbird
+#exec thunderbird
 
 assign [class="firefox"] $web
 for_window [class="firefox"] border 1pixel
-exec firefox
+#exec firefox
 
 assign [class="Youtube"] $yt
 for_window [class="Youtube"] border 1pixel
-exec fish -c yt
+#exec fish -c yt
 
 # Keys
 exec_always --no-startup-id xmodmap -e "clear lock"
