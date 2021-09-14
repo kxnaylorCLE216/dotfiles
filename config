@@ -154,8 +154,10 @@ bindsym $mod+Shift+0 move container to workspace number $ws10
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
+
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
+
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'End Session?' -B 'Yes' 'i3-msg exit'"
 
@@ -227,7 +229,7 @@ bar {
 
 exec_always --no-startup-id ~/.screenlayout/autoxrandr.sh
 
-exec_always --no-startup-id nitrogen --set-zoom-fill /home/kxn/Pictures/0a1.jpg --head=0 && nitrogen --set-zoom-fill /home/kxn/Pictures/0a2.jpg --head=1
+exec_always --no-startup-id nitrogen --set-zoom-fill /home/kxn/Pictures/0a1.jpg --head=0 && nitrogen --set-zoom-fill /home/kxn/Pictures/0a2.jpg --head=1 && killall conky && conky --config=/home/kxn/.config/conky/conky.conf && conky --config=/home/kxn/.config/conky/Gotham
 
 exec protonmail-bridge --no-window &
 
@@ -235,7 +237,9 @@ exec copyq
 
 exec nextcloud
 
-exec conky
+exec conky --config=/home/kxn/.config/conky/conky.conf
+
+exec picom 
 
 #i3lock
 bindsym $mod+Shift+x exec i3lock --color 475263 && systemctl suspend
@@ -250,7 +254,9 @@ bindsym $mod+g exec gedit
 
 bindsym $mod+c exec code
 
-bindsym $mod+o exec ~/.screenlayout/one.sh
+bindsym $mod+o exec ~/.screenlayout/one.sh && nitrogen --set-zoom-fill /home/kxn/Pictures/0a2.jpg && killall conky && conky --config=/home/kxn/.config/conky/conky1.conf && conky --config=/home/kxn/.config/conky/Gotham
+
+bindsym $mod+Shift+o exec ~/.screenlayout/none.sh
 
 gaps inner 5
 gaps outer 5
