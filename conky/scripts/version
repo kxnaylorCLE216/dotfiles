@@ -1,1 +1,2 @@
-/home/kxn/.config/conky/scripts/version
+#!/bin/bash
+echo "`lsb_release -a 2>&1 | grep 'Description:' | awk '{print $2 " " $3 }'`"
