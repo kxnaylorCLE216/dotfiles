@@ -46,6 +46,7 @@ bindsym XF86AudioStop exec playerctl stop
 bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 bindsym XF86Tools exec youtube-music
+bindsym Print exec flameshot gui
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -254,9 +255,9 @@ bindsym $mod+g exec gedit
 
 bindsym $mod+c exec code
 
-bindsym $mod+o exec ~/.screenlayout/one.sh && nitrogen --set-zoom-fill /home/kxn/Pictures/0a2.jpg && killall conky && conky --config=/home/kxn/.config/conky/conky1.conf && conky --config=/home/kxn/.config/conky/Gotham
+bindsym $mod+o exec ~/.screenlayout/one.sh && nitrogen --set-zoom-fill /home/kxn/Pictures/0a2.jpg && conky --config=/home/kxn/.config/conky/conky1.conf && conky --config=/home/kxn/.config/conky/Gotham
 
-bindsym $mod+Shift+o exec ~/.screenlayout/none.sh
+bindsym $mod+Shift+o exec ~/.screenlayout/none.sh && killall conky
 
 gaps inner 5
 gaps outer 5
