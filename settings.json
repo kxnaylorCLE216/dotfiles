@@ -12,5 +12,7 @@
     "workbench.sideBar.location": "right",
     "workbench.iconTheme": "material-icon-theme",
     "workbench.settings.openDefaultKeybindings": true,
-    "keyboard.dispatch": "keyCode"
+    "keyboard.dispatch": "keyCode",
+    "dotnet-test-explorer.testProjectPath": "seleniumExample.csproj",
+    "workbench.colorTheme": "Material Theme Darker"
 }

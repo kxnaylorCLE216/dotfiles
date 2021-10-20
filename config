@@ -259,8 +259,8 @@ bindsym $mod+o exec ~/.screenlayout/one.sh && nitrogen --set-zoom-fill /home/kxn
 
 bindsym $mod+Shift+o exec ~/.screenlayout/none.sh && killall conky
 
-gaps inner 5
-gaps outer 5
+gaps inner 8
+gaps outer 8
 smart_gaps on
 
 # sticky window
@@ -301,6 +301,19 @@ for_window [class="firefox"] border 1pixel
 assign [class="Youtube"] $yt
 for_window [class="Youtube"] border 1pixel
 #exec fish -c yt
+
+set $monitor_left HDMI-1
+set $monitor_right HDMI-2
+
+workspace $web output $monitor_left
+workspace $ytmusic output $monitor_left
+workspace $terms output $monitor_right
+workspace $code output $monitor_right
+workspace $yt output $monitor_left
+workspace $gedit output $monitor_right
+workspace $twitch output $monitor_left
+workspace $email output $monitor_right
+workspace $signal output $monitor_right
 
 # Keys
 exec_always --no-startup-id xmodmap -e "clear lock"
