@@ -14,5 +14,6 @@
     "workbench.settings.openDefaultKeybindings": true,
     "keyboard.dispatch": "keyCode",
     "dotnet-test-explorer.testProjectPath": "seleniumExample.csproj",
-    "workbench.colorTheme": "Material Theme Darker"
+    "workbench.colorTheme": "Material Theme Darker",
+    "terminal.integrated.defaultProfile.linux": "bash"
 }
